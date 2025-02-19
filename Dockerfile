@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copie des fichiers HTML, CSS et JS vers le répertoire de Nginx
-COPY Main.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html
 COPY Main.js /usr/share/nginx/html/Main.js
 COPY Main.css /usr/share/nginx/html/Main.css
 COPY images/ /usr/share/nginx/html/images/
