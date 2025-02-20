@@ -128,8 +128,7 @@ arrowLeft.addEventListener('click', () => {
 function updateTextBasedOnSize() {
     const spans = document.querySelectorAll("h2 span");
 
-    const isMobile = window.innerWidth >= 368 && window.innerWidth <= 468 &&
-        window.innerHeight >= 480 && window.innerHeight <= 642;
+    const isMobile =  (368 >= window.innerWidth <= 468 &&  480 >= window.innerHeight <= 642);
 
     console.log("Taille de l'écran : ", window.innerWidth, "x", window.innerHeight, " | Mode Mobile :", isMobile);
 

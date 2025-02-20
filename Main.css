@@ -840,11 +840,7 @@ section.active{
         grid-template-columns: 1fr;
     }
 }
-@media screen and (max-width: 450px) {
-    html{
-        font-size: 50%;
-    }
-}
+
 @media screen and (max-width: 460px) {
 
     #theme-toggle {
@@ -895,7 +891,8 @@ section.active{
         object-fit: cover;
     }
     .contact-box .field-box{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 2fr);
+        padding-left: 1rem;
     }
     .home p{
         padding: 5rem ;
@@ -910,10 +907,20 @@ section.active{
         margin-left: 0;
     }
     .contact-box form{
-        padding: 2.5rem 3rem 3.5rem;
+        padding: 6.5rem 0 9.5rem;
+        width: 100%;
+    }
+    .contact-box .field-box input{
+        width: 95%;
+    }
+    .contact-box .field-box textarea{
+        width: 95%;
     }
     .contact-box h2{
-        font-size: 3.5rem;
+        font-size: 1.5rem;
+    }
+    .contact-box{
+        padding-top: 4rem;
     }
 }
 
