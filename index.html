@@ -14,8 +14,8 @@
         <i class="bx bx-menu" id="menu-icon"></i>
         <nav>
             <a href="#" class="active">Accueil</a>
-            <a href="#">À Propos</a>
             <a href="#">Services</a>
+            <a href="#">À Propos</a>
             <a href="#">Portfolio</a>
             <a href="#">Contact</a>
         </nav>
@@ -52,7 +52,7 @@
                 unique d’évoluer dans un environnement dynamique et de contribuer à des projets d’envergure.
             </p>
             <div class="btn-sci">
-                <a href="#" class="btn"> Télécharger mon CV</a>
+                <a href="images/CV_DATOUO_NDJOUBI_Alain_paul.pdf" download class="btn"> Télécharger mon CV</a>
                 <div class="sci">
                     <a href="https://github.com/AlainDanp" ><i class='bx bxl-github'></i></a>
                     <a href="https://www.linkedin.com/in/alain-paul-datouo-ndjoubi-32221b303/" ><i class='bx bxl-linkedin'></i></a>
@@ -241,8 +241,8 @@
                             <span>Python</span>
                         </div>
                         <div class="resume-item">
-                            <i class='bx bxl-c-plus-plus'></i>
-                            <span>C</span>
+                            <i class='bx bxl-docker'></i>
+                            <span>Docker</span>
                         </div>
                     </div>
                 </div>
@@ -361,7 +361,7 @@
                         <p>C</p>
                     </div>
                     <div class="live-github">
-                        <a href="#"><i class="bx bx-arrow-back"></i><span>Projet en ligne</span></a>
+                        <a href="images/Back_to_the_past.rar" download>  <i class="bx bx-arrow-back"></i><span>Projet en ligne</span></a>
                         <a href="https://github.com/AlainDanp/Back-to-the-past"><i class="bx bxl-github"></i><span>Repository GitHub</span></a>
                     </div>
                 </div>
@@ -427,14 +427,14 @@
                 </div>
             </div>
             <div class="contact-box">
-                <form action="">
+                <form id="contact-form" action="https://formspree.io/f/xvgzdjad" method="POST">
                     <h2 class="heading">Contacter<span> MOI!</span></h2>
                     <div class="field-box">
-                        <input type="text" placeholder="Nom Complet" required>
-                        <input type="email" placeholder="Adresse Email" required>
-                        <input type="tel" placeholder="Numéro de Téléphone" required>
-                        <input type="text" placeholder="Sujet Email" required>
-                        <textarea name="message" id="message" placeholder="Votre Message" required></textarea>
+                        <input type="text" name="name" id="name" placeholder="Nom Complet" required>
+                        <input type="email" name="email"  id="email" placeholder="Adresse Email" required>
+                        <input type="tel" name="phone" id="phone" placeholder="Numéro de Téléphone" required>
+                        <input type="text" name="subject" id="subject" placeholder="Sujet Email" required>
+                        <textarea name="message" id="from-message" placeholder="Votre Message" required></textarea>
                     </div>
                     <button type="submit" class="btn">Envoyer Votre Message</button>
                 </form>

@@ -124,3 +124,104 @@ arrowLeft.addEventListener('click', () => {
     }
     activePortfolio();
 });
+
+function updateTextBasedOnSize() {
+    const spans = document.querySelectorAll("h2 span");
+
+    const isMobile = window.innerWidth >= 368 && window.innerWidth <= 468 &&
+        window.innerHeight >= 480 && window.innerHeight <= 642;
+
+    console.log("Taille de l'écran : ", window.innerWidth, "x", window.innerHeight, " | Mode Mobile :", isMobile);
+
+    spans.forEach(span => {
+        if (isMobile) {
+            if (span.getAttribute("data-text") === "Elève ingénieur en informatique") {
+                span.setAttribute("data-text", "Élève ingénieur IT");
+                span.textContent = "Élève ingénieur IT";
+            } else if (span.getAttribute("data-text") === "Développeur Web junior") {
+                span.setAttribute("data-text", "Dév. Web jr");
+                span.textContent = "Dév. Web jr";
+            } else if (span.getAttribute("data-text") === "Développeur Mobile junior") {
+                span.setAttribute("data-text", "Dév. Mobile jr");
+                span.textContent = "Dév. Mobile jr";
+            }
+        } else {
+            if (span.getAttribute("data-text") === "Élève ingénieur IT") {
+                span.setAttribute("data-text", "Elève ingénieur en informatique");
+                span.textContent = "Elève ingénieur en informatique";
+            } else if (span.getAttribute("data-text") === "Développeur Web jr") {
+                span.setAttribute("data-text", "Développeur Web junior");
+                span.textContent = "Développeur Web junior";
+            } else if (span.getAttribute("data-text") === "Développeur Mobile jr") {
+                span.setAttribute("data-text", "Développeur Mobile junior");
+                span.textContent = "Développeur Mobile junior";
+            }
+        }
+    });
+}
+
+// Exécuter au chargement de la page et à chaque redimensionnement
+window.addEventListener("load", updateTextBasedOnSize);
+window.addEventListener("resize", updateTextBasedOnSize);
+
+document.getElementById("download-cv").addEventListener("click", function (event) {
+    const cvFile = "images/CV_DATOUO_NDJOUBI_Alain_paul.pdf";
+
+    // Vérifie si le fichier existe
+    fetch(cvFile)
+        .then(response => {
+            if (!response.ok) {
+                alert("⚠️ Le fichier CV n'est pas disponible.");
+                event.preventDefault(); // Empêche le téléchargement si le fichier est introuvable
+            }
+        })
+        .catch(error => {
+            console.error("Erreur de téléchargement :", error);
+            alert("Une erreur s'est produite lors du téléchargement.");
+            event.preventDefault();
+        });
+});
+
+document.getElementById("download-back").addEventListener("click", function (event) {
+    const back_to_the_past = "images/Back_to_the_past.rar";
+
+    fetch(back_to_the_past)
+        .then(response => {
+            if (!response.ok) {
+                alert("Le fichier est introuvable");
+                event.preventDefault();
+            }
+        })
+        .catch(error => {
+            console.error("Erreur s'est introuvable:", error);
+            alert("Une erreur est arriver");
+            event.preventDefault();
+        })
+})
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const formMessage = document.getElementById("form-message");
+    const formData = new FormData(this);
+
+    fetch("https://formspree.io/f/xvgzdjad", formMessage, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    }).then(response => {
+        if (response.ok) {
+            formMessage.textContent = "✅ Message envoyé avec succès !";
+            formMessage.style.color = "green";
+            document.getElementById("contact-form").reset(); // Réinitialiser le formulaire
+        } else {
+            formMessage.textContent = "❌ Une erreur s'est produite. Réessayez.";
+            formMessage.style.color = "red";
+        }
+    }).catch(error => {
+        formMessage.textContent = "⚠️ Erreur réseau. Vérifiez votre connexion.";
+        formMessage.style.color = "red";
+    });
+});
