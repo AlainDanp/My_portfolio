@@ -164,7 +164,7 @@ window.addEventListener("load", updateTextBasedOnSize);
 window.addEventListener("resize", updateTextBasedOnSize);
 
 document.getElementById("download-cv").addEventListener("click", function (event) {
-    const cvFile = "images/CV_DATOUO_NDJOUBI_Alain_paul.pdf";
+    const cvFile = "images/CV_DATOUO_NDJOUBI_Alain_Paul.pdf";
 
     // Vérifie si le fichier existe
     fetch(cvFile)
