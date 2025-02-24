@@ -162,25 +162,34 @@ function updateTextBasedOnSize() {
 window.addEventListener("load", updateTextBasedOnSize);
 window.addEventListener("resize", updateTextBasedOnSize);
 
-document.getElementById("download-cv").addEventListener("click", function (event) {
-    const cvFile = `images/CV_DATOUO_NDJOUBI_Alain_Paul.pdf`;
+document.addEventListener("DOMContentLoaded", function () {
+    const downloadButton = document.getElementById("download-cv");
 
-    // Vérifie si le fichier existe
-    fetch(cvFile)
-        .then(response => {
-            if (!response.ok) {
-                alert("Le fichier CV n'est pas disponible.");
-                event.preventDefault(); // Empêche le téléchargement si le fichier est introuvable
-            }
-        })
-        .catch(error => {
-            console.error("Erreur de téléchargement :", error);
-            alert("Une erreur s'est produite lors du téléchargement.");
-            event.preventDefault();
+    if (downloadButton) {
+        downloadButton.addEventListener("click", function (event) {
+            const cvFile = "images/CV_DATOUO_NDJOUBI_Alain_Paul.pdf";
+
+            fetch(cvFile)
+                .then(response => {
+                    if (!response.ok) {
+                        alert("Le fichier CV n'est pas disponible.");
+                        event.preventDefault();
+                    }
+                })
+                .catch(error => {
+                    console.error("Erreur de téléchargement :", error);
+                    alert("Une erreur s'est produite lors du téléchargement.");
+                    event.preventDefault();
+                });
         });
+    } else {
+        console.error("❌ Erreur : Le bouton 'Télécharger mon CV' n'existe pas.");
+    }
 });
 
-document.getElementById("download-back").addEventListener("click", function (event) {
+
+
+document.getElementById("rar-download").addEventListener("click", function (event) {
     const back_to_the_past = "images/Back_to_the_past.rar";
 
     fetch(back_to_the_past)
@@ -198,7 +207,7 @@ document.getElementById("download-back").addEventListener("click", function (eve
 })
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+    event.preventDefault();
 
     const formMessage = document.getElementById("form-message");
     const formData = new FormData(this);
