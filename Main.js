@@ -162,7 +162,7 @@ function updateTextBasedOnSize() {
 window.addEventListener("load", updateTextBasedOnSize);
 window.addEventListener("resize", updateTextBasedOnSize);
 
-document.getElementById("download-cv").addEventListener("submit",function (event){
+document.getElementById("download-cv").addEventListener("click",function (event){
     event.preventDefault();
     const cv_down = "images/CV_DATOUO_Alain.pdf";
 
@@ -180,7 +180,6 @@ document.getElementById("download-cv").addEventListener("submit",function (event
         })
 
 })
-
 
 document.getElementById("rar-download").addEventListener("click", function (event) {
     const back_to_the_past = "images/Back_to_the_past.rar";
