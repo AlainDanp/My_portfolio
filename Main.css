@@ -419,7 +419,7 @@ section.active{
 }
 
 .resume-detail.Skills .resume-list{
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     height: auto;
     overflow: visible;
 }
