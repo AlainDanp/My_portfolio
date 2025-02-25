@@ -162,31 +162,24 @@ function updateTextBasedOnSize() {
 window.addEventListener("load", updateTextBasedOnSize);
 window.addEventListener("resize", updateTextBasedOnSize);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const downloadButton = document.getElementById("download-cv");
+document.getElementById("download-cv").addEventListener("submit",function (event){
+    event.preventDefault();
+    const cv_down = "images/CV_DATOUO_Alain.pdf";
 
-    if (downloadButton) {
-        downloadButton.addEventListener("click", function (event) {
-            const cvFile = "images/CV_DATOUO_NDJOUBI_Alain_Paul.pdf";
+    fetch(cv_down)
+        .then(response => {
+            if (response.ok) {
+                alert("le ficher est introuvable");
+                event.preventDefault();
+            }
+        })
+        .catch((error) => {
+            console.error("Erreur c'est introuvable", error);
+            alert("une erreur");
+            event.preventDefault();
+        })
 
-            fetch(cvFile)
-                .then(response => {
-                    if (!response.ok) {
-                        alert("Le fichier CV n'est pas disponible.");
-                        event.preventDefault();
-                    }
-                })
-                .catch(error => {
-                    console.error("Erreur de téléchargement :", error);
-                    alert("Une erreur s'est produite lors du téléchargement.");
-                    event.preventDefault();
-                });
-        });
-    } else {
-        console.error("❌ Erreur : Le bouton 'Télécharger mon CV' n'existe pas.");
-    }
-});
-
+})
 
 
 document.getElementById("rar-download").addEventListener("click", function (event) {
