@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (downloadButton) {
         downloadButton.addEventListener("click", function (event) {
-            const cvFile = "assets/CV_DATOUO_Alain.pdf";
+            const cvFile = "assets/CV_Alain_Paul_DATOUO_NDJOUBI.pdf";
 
             fetch(cvFile)
                 .then(response => {
@@ -205,29 +205,42 @@ document.getElementById("rar-download").addEventListener("click", function (even
         })
 })
 
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
 
-    const formMessage = document.getElementById("form-message");
-    const formData = new FormData(this);
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-    fetch("https://formspree.io/f/xvgzdjad", formMessage, {
-        method: "POST",
-        body: formData,
-        headers: {
-            "Accept": "application/json"
-        }
-    }).then(response => {
-        if (response.ok) {
-            formMessage.textContent = "✅ Message envoyé avec succès !";
-            formMessage.style.color = "green";
-            document.getElementById("contact-form").reset(); // Réinitialiser le formulaire
-        } else {
-            formMessage.textContent = "❌ Une erreur s'est produite. Réessayez.";
-            formMessage.style.color = "red";
-        }
-    }).catch(error => {
-        formMessage.textContent = "⚠️ Erreur réseau. Vérifiez votre connexion.";
-        formMessage.style.color = "red";
-    });
+            const formMessage = document.createElement("p");
+            formMessage.id = "form-message";
+            this.appendChild(formMessage);
+
+            const formData = new FormData(this);
+
+            fetch("https://formspree.io/f/xvgzdjad", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }).then(response => {
+                if (response.ok) {
+                    formMessage.textContent = "✅ Message envoyé avec succès !";
+                    formMessage.style.color = "green";
+                    contactForm.reset();
+                } else {
+                    formMessage.textContent = "❌ Une erreur s'est produite. Réessayez.";
+                    formMessage.style.color = "red";
+                }
+            }).catch(error => {
+                console.error("Erreur de soumission :", error);
+                formMessage.textContent = "⚠️ Erreur réseau. Vérifiez votre connexion.";
+                formMessage.style.color = "red";
+            });
+        });
+    } else {
+        console.error("❌ Erreur : Le formulaire 'contact-form' n'existe pas.");
+    }
 });
+

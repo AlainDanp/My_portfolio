@@ -314,7 +314,6 @@ section.active{
     transform: scale(1.06);
 }
 
-
 .services-box p{
     color: #ffffff;
     font-size: 1rem;
@@ -397,6 +396,7 @@ section.active{
 .resume-detail{
     display: none;
 }
+
 .resume-detail.active{
     display: block;
 }
@@ -455,9 +455,9 @@ section.active{
     transform: scale(1);
 }
 
-
 .resume-list .resume-item{
     background: var(--secon-background-color);
+    color: white;
     border-radius: .8rem;
     padding: 3rem 2.5rem;
     display: flex;
@@ -472,6 +472,7 @@ section.active{
     position: relative;
     margin-left: 2rem;
     margin-bottom: 2rem;
+    color: var(--btn-background-color);
 }
 .resume-item .company::before{
     content: '';
@@ -482,6 +483,9 @@ section.active{
     background: var(--btn-background-color);
     border-radius: 50%;
     margin-left: -2rem;
+}
+.resume-item .description{
+    color: white;
 }
 
 .resume-item h3{
@@ -547,7 +551,7 @@ section.active{
     display: inline-flex;
     padding: 1.3rem;
     font-size: 3rem;
-    color: var(--text-color);
+    color: #ffffff;
     border-radius: 50%;
     background: var(--secon-background-color);
     transition: .5s;
@@ -571,7 +575,7 @@ section.active{
     padding: .5rem 1rem;
     border-radius: .6rem;
     pointer-events: none;
-    background: var(--text-color);
+    background: #ffffff;
     color: var(--btn-background-color);
     opacity: 0;
     transition: .2s;
@@ -617,7 +621,7 @@ section.active{
     border: .2rem solid var(--btn-background-color);
     border-radius: .6rem;
     font-size: 4rem;
-    color: var(--text-color);
+    color: #ffffff;
     cursor: pointer;
 }
 
