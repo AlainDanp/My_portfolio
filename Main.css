@@ -429,7 +429,7 @@ section.active{
     height: auto;
 }
 .resume-detail.Skills .resume-item i{
-    font-size: 8.5rem;
+    font-size: 7.5rem;
     transition: .5s;
 }
 .resume-detail.Skills .resume-item:hover{

@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (downloadButton) {
         downloadButton.addEventListener("click", function (event) {
-            const cvFile = "assets/CV_Alain_Paul_DATOUO_NDJOUBI.pdf";
+            const cvFile = "assets/CV_Alain_Datouo.pdf";
 
             fetch(cvFile)
                 .then(response => {
