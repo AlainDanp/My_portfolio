@@ -7,7 +7,7 @@ Je suis étudiant ingénieur à l'ESIEA, passionné par le développement web et
 
 ![Aperçu du portfolio](assets/portfolio.png)
 
-![Aperçu du portfolio](assets/portfolio2.png)
+![Aperçu du portfolio](assets/Portfolio2.png)
 
 
 
