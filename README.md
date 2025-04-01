@@ -5,6 +5,9 @@ Je suis étudiant ingénieur à l'ESIEA, passionné par le développement web et
 
 🔗 [Voir le portfolio en ligne](https://alaindanp.github.io/My_portfolio/)
 
+![Aperçu du portfolio](assets/portfolio.png)
+
+
 ---
 
 ## 🚀 À propos de moi
@@ -62,5 +65,3 @@ J’ai travaillé sur plusieurs projets concrets, incluant des applications mobi
 - ✉️ alain.datouo@gmail.com
 
 ---
-
-> "Toujours apprendre. Toujours créer. Toujours améliorer."
