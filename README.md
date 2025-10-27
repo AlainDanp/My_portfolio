@@ -15,7 +15,7 @@ Je suis étudiant ingénieur à l'ESIEA, passionné par le développement web et
 
 ## 🚀 À propos de moi
 
-Je suis en 3ᵉ année d'école d'ingénieur en informatique, spécialisation **DevOps / Cloud / Full Stack**.  
+Je suis en 4ᵉ année d'école d'ingénieur en informatique, spécialisation **DevOps / Cloud / Full Stack**.  
 J’ai travaillé sur plusieurs projets concrets, incluant des applications mobiles, des dashboards web, et des déploiements automatisés sur AWS.
 
 ---
